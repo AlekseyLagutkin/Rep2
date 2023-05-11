@@ -6,7 +6,7 @@ using namespace std;
 
 user::user()
 {
-	//cout << "Êîíñòğóêòîğ user" << endl;
+	//cout << "ĞšĞ¾Ğ½ÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€ user" << endl;
 }
 void user::set_login(string log) 
 {
@@ -20,55 +20,55 @@ void user::set_name(string nam)
 {
 	name = nam;
 }
-void user::sent_mes(string s_mes, string r_user)   //Îòïğàâêà ñîîáùåíèÿ
+void user::sent_mes(string s_mes, string r_user)   //ĞÑ‚Ğ¿Ñ€Ğ°Ğ²ĞºĞ° ÑĞ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ñ
 {
 	sent_2 = sent_1;
 	to_2 = to_1;
 	sent_1 = s_mes;
 	to_1 = r_user;
 }
-void user::rec_mes(string r_mes, string s_user)   //Ïîëó÷åíèå ñîîáùåíèÿ
+void user::rec_mes(string r_mes, string s_user)   //ĞŸĞ¾Ğ»ÑƒÑ‡ĞµĞ½Ğ¸Ğµ ÑĞ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ñ
 {
 	rec_2 = rec_1;
 	from_2 = from_1;
 	rec_1 = r_mes;
 	from_1 = s_user;
 }
-string user::get_login()  //Ïîëó÷åíèå ëîãèíà
+string user::get_login()  //ĞŸĞ¾Ğ»ÑƒÑ‡ĞµĞ½Ğ¸Ğµ Ğ»Ğ¾Ğ³Ğ¸Ğ½Ğ°
 {
 	return login;
 }
-string user::get_pasw()  //Ïîëó÷åíèå ïàğîëÿ
+string user::get_pasw()  //ĞŸĞ¾Ğ»ÑƒÑ‡ĞµĞ½Ğ¸Ğµ Ğ¿Ğ°Ñ€Ğ¾Ğ»Ñ
 {
 	return pasw;
 }
-string user::get_name()  //Ïîëó÷åíèå èìåíè
+string user::get_name()  //ĞŸĞ¾Ğ»ÑƒÑ‡ĞµĞ½Ğ¸Ğµ Ğ¸Ğ¼ĞµĞ½Ğ¸
 {
 	return name;
 }
-void user::show_mes()   //Âûâîä ñîîáùåíèé
+void user::show_mes()   //Ğ’Ñ‹Ğ²Ğ¾Ğ´ ÑĞ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ğ¹
 {
-	cout << endl << "Ïğèíÿòûå ñîîáùåíèÿ:" << endl;
+	cout << endl << "ĞŸÑ€Ğ¸Ğ½ÑÑ‚Ñ‹Ğµ ÑĞ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ñ:" << endl;
 	if (rec_1 != "")
 	{
-		cout << rec_1 << "   îò   " << from_1 << endl;
+		cout << rec_1 << "   Ğ¾Ñ‚   " << from_1 << endl;
 	}
 	if (rec_2 != "")
 	{
-		cout << rec_2 << "   îò   " << from_2 << endl;
+		cout << rec_2 << "   Ğ¾Ñ‚   " << from_2 << endl;
 	}
-	cout << "Îòïğàâëåííûå ñîîáùåíèÿ:" << endl;
+	cout << "ĞÑ‚Ğ¿Ñ€Ğ°Ğ²Ğ»ĞµĞ½Ğ½Ñ‹Ğµ ÑĞ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ñ:" << endl;
 	if (sent_1 != "")
 	{
-		cout << sent_1 << "   êîìó   " << to_1 << endl;
+		cout << sent_1 << "   ĞºĞ¾Ğ¼Ñƒ   " << to_1 << endl;
 	}
 	if (sent_2 != "")
 	{
-		cout << sent_2 << "   êîìó   " << to_2 << endl;
+		cout << sent_2 << "   ĞºĞ¾Ğ¼Ñƒ   " << to_2 << endl;
 	}
 	cout << endl;
 }
 user::~user()
 {
-	//cout << "Äåñòğóêòîğ user" << endl;
+	//cout << "Ğ”ĞµÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€ user" << endl;
 }

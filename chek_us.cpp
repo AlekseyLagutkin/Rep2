@@ -7,23 +7,23 @@ using namespace std;
 
 chek_us::chek_us(user* U, int sizem, int fel) : _U(U), _sizem(sizem), _fel(fel)
 {
-	//cout << "Конструктор chek_us" << endl;
+	//cout << "РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ chek_us" << endl;
 }
-int chek_us::chek_logpas()   //Вход пользователя
+int chek_us::chek_logpas()   //Р’С…РѕРґ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 {
-	cout << "Введите логин:";
+	cout << "Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ:";
 	cin >> _log;
 	int j = 0;
 	bool login = false;
 	bool pasw = false;
 	for (int i = 0; i < _fel; ++i)
 	{
-		if (_log == (_U + i)->get_login())   //Проверка логина
+		if (_log == (_U + i)->get_login())   //РџСЂРѕРІРµСЂРєР° Р»РѕРіРёРЅР°
 		{
 			login = true;
-			cout << "Введите пароль:";
+			cout << "Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ:";
 			cin >> _pas;
-			if (_pas == (_U + i)->get_pasw())   //Проверка пароля
+			if (_pas == (_U + i)->get_pasw())   //РџСЂРѕРІРµСЂРєР° РїР°СЂРѕР»СЏ
 			{
 				pasw=true;
 				j = i;
@@ -31,17 +31,17 @@ int chek_us::chek_logpas()   //Вход пользователя
 			}
 			else
 			{
-				cout << "Неверный пароль" << endl;
+				cout << "РќРµРІРµСЂРЅС‹Р№ РїР°СЂРѕР»СЊ" << endl;
 			}
 		}
 	}
 	if (login == false)
 	{
-		cout << "Неверный логин" << endl;
+		cout << "РќРµРІРµСЂРЅС‹Р№ Р»РѕРіРёРЅ" << endl;
 	}
 	if (login && pasw && true)
 	{
-		cout << "Вход выполнен\n" << endl;
+		cout << "Р’С…РѕРґ РІС‹РїРѕР»РЅРµРЅ\n" << endl;
 		return j;
 	}
 	else
@@ -49,46 +49,46 @@ int chek_us::chek_logpas()   //Вход пользователя
 		return -1;
 	}
 }
-int chek_us::chek_in()   //Регистрация пользователя
+int chek_us::chek_in()   //Р РµРіРёСЃС‚СЂР°С†РёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 {
-	if (_fel >= _sizem)   //Проверка на переполнение массива 
+	if (_fel >= _sizem)   //РџСЂРѕРІРµСЂРєР° РЅР° РїРµСЂРµРїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР° 
 	{
-		throw "Извините, чат заполнен.\n";
+		throw "РР·РІРёРЅРёС‚Рµ, С‡Р°С‚ Р·Р°РїРѕР»РЅРµРЅ.\n";
 	}
 	else
 	{
 		bool login = true;   
 		string _pas2;
-		cout << "Введите логин:" << endl;
+		cout << "Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ:" << endl;
 		cin >> _log;
 		for (int i = 0; i < _fel; ++i)
 		{
 			if (_log == (_U + i)->get_login())
 			{
 				login = false;
-				cout << "Логин уже занят" << endl;
+				cout << "Р›РѕРіРёРЅ СѓР¶Рµ Р·Р°РЅСЏС‚" << endl;
 				break;
 			}
 		}
 		if (login == true)
 		{
-			cout << "Введите ваше имя:";
+			cout << "Р’РІРµРґРёС‚Рµ РІР°С€Рµ РёРјСЏ:";
 			cin >> _name;
-			cout << "Введите пароль:";
+			cout << "Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ:";
 			cin >> _pas;
-			cout << "Подтвердите пароль:";
+			cout << "РџРѕРґС‚РІРµСЂРґРёС‚Рµ РїР°СЂРѕР»СЊ:";
 			cin >> _pas2;
 			if (_pas2 == _pas)
 			{
 				(_U + _fel)->set_login(_log);
 				(_U + _fel)->set_name(_name);
 				(_U + _fel)->set_pasw(_pas);
-				cout << "Регистрация прошла успешно!" << endl;
-				++_fel;   //Увеличение количества заполненных элементов
+				cout << "Р РµРіРёСЃС‚СЂР°С†РёСЏ РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ!" << endl;
+				++_fel;   //РЈРІРµР»РёС‡РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° Р·Р°РїРѕР»РЅРµРЅРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ
 			}
 			else
 			{
-				cout << "Неверный пароль, регистрация прервана." << endl;
+				cout << "РќРµРІРµСЂРЅС‹Р№ РїР°СЂРѕР»СЊ, СЂРµРіРёСЃС‚СЂР°С†РёСЏ РїСЂРµСЂРІР°РЅР°." << endl;
 			}
 		}
 	}	
@@ -96,5 +96,5 @@ int chek_us::chek_in()   //Регистрация пользователя
 }
 chek_us::~chek_us()
 {
-	//cout << "Деструктор chek_us" << endl;
+	//cout << "Р”РµСЃС‚СЂСѓРєС‚РѕСЂ chek_us" << endl;
 }
